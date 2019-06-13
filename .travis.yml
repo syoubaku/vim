@@ -11,3 +11,14 @@ script:
   - date
   - bash setup.sh
   - date
+after_script:
+  - git remote add upstream https://github.com/ma6174/vim.git
+  - git fetch upstream
+  - git checkout master
+  - git merge upstream/master
+  - git init
+  - git config user.name "xiaomo"
+  - git config user.email "xiaomo@xiaomo.info"
+  - git add .
+  - git commit -m "automated build"
+  - git push --quiet --force https://${REPO_TOKEN}@github.com/xiaomo-collections/vim.git master
