@@ -9,8 +9,6 @@ python:
 
 script:
   - date
-  - bash setup.sh
-  - date
 after_script:
   - git remote add upstream https://github.com/ma6174/vim.git
   - git fetch upstream
